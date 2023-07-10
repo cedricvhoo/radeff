@@ -1,2 +1,2 @@
 # Documentation
-[Documentation](https://cedricvhoo.github.io/radeff/help/_build/index.html)
+[Documentation](https://cedricvhoo.github.io/index.html)
