@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python API &mdash; Radiation efficiency polygonal geometries 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Validation examples" href="validation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Radiation efficiency polygonal geometries
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userpage.html">User help page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#radfun.progressbar"><code class="docutils literal notranslate"><span class="pre">progressbar()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radfun.radeffYu"><code class="docutils literal notranslate"><span class="pre">radeffYu()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radfun.radeffpoly"><code class="docutils literal notranslate"><span class="pre">radeffpoly()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Radiation efficiency polygonal geometries</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/API.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-radfun">
+<span id="python-api"></span><h1>Python API<a class="headerlink" href="#module-radfun" title="Permalink to this heading"></a></h1>
+<p>Created on Fri Jul  7 15:30:02 2023</p>
+<p>&#64;author: Cédric Van hoorickx</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="radfun.progressbar">
+<span class="sig-prename descclassname"><span class="pre">radfun.</span></span><span class="sig-name descname"><span class="pre">progressbar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">progress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radfun.progressbar" title="Permalink to this definition"></a></dt>
+<dd><p>Show a progress bar</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>progress<span class="classifier">scalar between 0 and 1</span></dt><dd><p>Progress ratio (0 at start, 1 at end)</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radfun.radeffYu">
+<span class="sig-prename descclassname"><span class="pre">radfun.</span></span><span class="sig-name descname"><span class="pre">radeffYu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lxi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lyi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radfun.radeffYu" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Computes the radiation efficiency of a rectangular plate according to:</dt><dd><p>[1] Y. Yu and C. Hopkins. Reduced order integration for the radiation efficiency 
+of a rectangular plate. JASA Express Letters, 1(6):062801, 2021.</p>
+</dd>
+</dl>
+<section id="id1">
+<h2>Parameters<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>k0<span class="classifier">Array (Nf x 1)</span></dt><dd><p>Wavenumber air [^{-1}]</p>
+</dd>
+<dt>kf<span class="classifier">Array (Nf x 1)</span></dt><dd><p>Bending wavenumber of the plate [m^{-1}]</p>
+</dd>
+<dt>Lxi<span class="classifier">scalar</span></dt><dd><p>Length of the plate in the x direction [m]</p>
+</dd>
+<dt>Lyi<span class="classifier">scalar</span></dt><dd><p>Length of the plate in the y direction [m]</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>sigmai<span class="classifier">Array (Nf x 1)</span></dt><dd><p>Radiation efficiency of the plate [-]</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radfun.radeffpoly">
+<span class="sig-prename descclassname"><span class="pre">radfun.</span></span><span class="sig-name descname"><span class="pre">radeffpoly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Matm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lxim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lyim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radfun.radeffpoly" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the radiation efficiency of a polygonal plate</p>
+<section id="id2">
+<h2>Parameters<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>k0<span class="classifier">Array (Nf x 1)</span></dt><dd><p>Wavenumber air [^{-1}]</p>
+</dd>
+<dt>kf<span class="classifier">Array (Nf x 1)</span></dt><dd><p>Bending wavenumber of the plate [m^{-1}]</p>
+</dd>
+<dt>Matm: Matrix (Ny x Nx)</dt><dd><p>Matrix representing the geometry: equal to 1 if material is present, equal to 0 if not</p>
+</dd>
+<dt>Lxim<span class="classifier">Array (1 x Nx)</span></dt><dd><p>Length of the subplates in the x direction [m]</p>
+</dd>
+<dt>Lyim<span class="classifier">Array (Ny x 1)</span></dt><dd><p>Length of the subplates in the y direction [m]</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>Returns<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>sigma0<span class="classifier">Array (Nf x 1)</span></dt><dd><p>Zero order approximation of the plate’s radiation efficiency [-]</p>
+</dd>
+<dt>sigma1<span class="classifier">Array (Nf x 1)</span></dt><dd><p>First order approximation of the plate’s radiation efficiency [-]</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="validation.html" class="btn btn-neutral float-left" title="Validation examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Cédric Van hoorickx.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

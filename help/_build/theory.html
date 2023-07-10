@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theory &mdash; Radiation efficiency polygonal geometries 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Validation examples" href="validation.html" />
+    <link rel="prev" title="User help page" href="userpage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Radiation efficiency polygonal geometries
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userpage.html">User help page</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#radiation-efficiency-for-rectangular-geometries">Radiation efficiency for rectangular geometries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#radiation-efficiency-for-non-rectangular-geometries">Radiation efficiency for non-rectangular geometries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zero-order-approximation">Zero order approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-order-approximation">First order approximation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">Python API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Radiation efficiency polygonal geometries</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Theory</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/theory.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="theory">
+<h1>Theory<a class="headerlink" href="#theory" title="Permalink to this heading"></a></h1>
+<section id="radiation-efficiency-for-rectangular-geometries">
+<h2>Radiation efficiency for rectangular geometries<a class="headerlink" href="#radiation-efficiency-for-rectangular-geometries" title="Permalink to this heading"></a></h2>
+<p>The geometrical radiation efficiency can be calculated from:</p>
+<div class="math notranslate nohighlight">
+\[\sigma(k_\mathrm{f},\phi) = \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_S\int_SG(\mathbf{x},\mathbf{x}')\mathrm{e}^{\mathrm{i}k_\mathrm{f}\left[(x-x')\cos\phi+(y-y')\sin\phi\right]}\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\},\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathbf{x} = [x,y]\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}'= [x',y']\)</span> and the Green’s function equals:</p>
+<div class="math notranslate nohighlight">
+\[G(\mathbf{x},\mathbf{x}') = \dfrac{\mathrm{e}^{-\mathrm{i}k_0||\mathbf{x}-\mathbf{x}'||}}{2\pi||\mathbf{x}-\mathbf{x}'||}.\]</div>
+<p>The heading averaged geometrical radiation efficiency then equals:</p>
+<div class="math notranslate nohighlight">
+\[\bar{\sigma}(k_\mathrm{f}) = \dfrac{1}{2\pi}\int_0^{2\pi}\sigma(k_\mathrm{f},\phi)\mathrm{d}\phi = \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_S\int_SG(||\mathbf{x}-\mathbf{x}'||)\,\mathrm{J}_0(k_\mathrm{f}||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}.\]</div>
+<p>An order reduction of this radiation efficiency is achieved in [1] for rectangular geometries:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar{\sigma}(k_\mathrm{f}) = \,&amp;\mathrm{Re}\left\{\dfrac{2\mathrm{i}k_0}{\pi S}\int_0^{L_y}\left(\dfrac{L_xL_y\pi}{2}-L_yR-L_xR+\dfrac{R^2}{2}\right)\mathrm{J}_0(k_\mathrm{f}R)\mathrm{e}^{-\mathrm{i}k_0R}\mathrm{d}R\right\} \nonumber \\
+&amp;+\mathrm{Re}\left\{\dfrac{2\mathrm{i}k_0}{\pi S}\int_{L_y}^{L_x}\left(L_xL_y\arcsin\dfrac{L_y}{R}-\dfrac{L_y^2}{2}+L_x\sqrt{R^2-L_y^2}-L_xR\right)\mathrm{J}_0(k_\mathrm{f}R)\mathrm{e}^{-\mathrm{i}k_0R}\mathrm{d}R\right\} \nonumber \\
+&amp;+\mathrm{Re}\left\{\dfrac{2\mathrm{i}k_0}{\pi S}\int_{L_x}^{\sqrt{L_x^2+L_y^2}}\left[L_xL_y\left(\arcsin\dfrac{L_y}{R}-\arccos\dfrac{L_x}{R}\right)+L_y\sqrt{R^2-L_x^2}+L_x\sqrt{R^2-L_y^2}\right.\right. \nonumber \\
+&amp;\qquad\left.\left.-\dfrac{L_x^2+L_y^2+R^2}{2}\right]\mathrm{J}_0(k_\mathrm{f}R)\mathrm{e}^{-\mathrm{i}k_0R}\mathrm{d}R\right\}.\end{split}\]</div>
+<p>The aim of this text is to use this order reduction expression for polygonal geometries with right angles (e.g., an L shape), in order to obtain an efficient calculation of the radiation efficiency for these kind of structures.</p>
+</section>
+<section id="radiation-efficiency-for-non-rectangular-geometries">
+<h2>Radiation efficiency for non-rectangular geometries<a class="headerlink" href="#radiation-efficiency-for-non-rectangular-geometries" title="Permalink to this heading"></a></h2>
+<p>The idea here is to split the non-rectangular geometry into rectangular subdomains. By dividing the geometry into rectangular subdomains with area <span class="math notranslate nohighlight">\(S_i\)</span>, the radiation efficiency becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar{\sigma}(k_\mathrm{f}) &amp;= \sum\limits_i\sum\limits_j \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} \\
+&amp;= \sum\limits_i \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_i}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}+\sum\limits_i\sum\limits_{j\neq i} \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} \\
+&amp;= \sum\limits_i \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_i}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}+2\sum\limits_i\sum\limits_{j&gt;i} \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\},\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||) = G(||\mathbf{x}-\mathbf{x}'||)\,\mathrm{J}_0(k_\mathrm{f}||\mathbf{x}-\mathbf{x}'||)\)</span>.</p>
+<section id="zero-order-approximation">
+<h3>Zero order approximation<a class="headerlink" href="#zero-order-approximation" title="Permalink to this heading"></a></h3>
+<p>As the Green’s function and the zero order Bessel function in these equations decrease with distance, the correlation for distant points is very small and can be neglected. Therefore the second term could be neglected, as this concerns the correlation between points on a different subdomain:</p>
+<div class="math notranslate nohighlight">
+\[\bar{\sigma}^{(0)}(k_\mathrm{f}) = \sum\limits_i \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_i}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} = \sum\limits_i \dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f}),\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:radeffisol}
+\bar{\sigma}_{i}(k_\mathrm{f}) = \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i}\int_{S_i}\int_{S_i}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}\]</div>
+<p>is the radiation efficiency for subdomain <span class="math notranslate nohighlight">\(i\)</span> in isolation.</p>
+</section>
+<section id="first-order-approximation">
+<h3>First order approximation<a class="headerlink" href="#first-order-approximation" title="Permalink to this heading"></a></h3>
+<p>Alternatively, only adjacent subdomains <span class="math notranslate nohighlight">\(j\in \epsilon_i\)</span> can be considered:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar{\sigma}^{(1)}(k_\mathrm{f}) &amp;= \sum\limits_i \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_i}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}+2\sum\limits_i\sum\limits_{\substack{j\in \epsilon_i \\ j&gt;i}} \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} \\
+\label{eq:radeffinterm}
+&amp;= \sum\limits_i \dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f})+2\sum\limits_i\sum\limits_{\substack{j\in \epsilon_i \\ j&gt;i}} \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\},\end{split}\]</div>
+<p>Consider now two adjacent subdomains <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>. The total radiation efficiency equals:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar{\sigma}_{ij}(k_\mathrm{f}) &amp;= \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i+S_j}\int_{S_i+S_j}\int_{S_i+S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} \\
+&amp;= \mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i+S_j}\int_{S_i}\int_{S_i}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}+\mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i+S_j}\int_{S_j}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} \nonumber \\
+&amp;\qquad+2\mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i+S_j}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\}\end{split}\]</div>
+<p>The first two integrals can be recognized:</p>
+<div class="math notranslate nohighlight">
+\[\bar{\sigma}_{ij}(k_\mathrm{f}) = \dfrac{S_i}{S_i+S_j}\bar{\sigma}_{i}(k_\mathrm{f})+\dfrac{S_j}{S_i+S_j}\bar{\sigma}_{j}(k_\mathrm{f})+2\mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i+S_j}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\},\]</div>
+<p>and therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}2\mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} &amp;= 2\dfrac{S_i+S_j}{S}\mathrm{Re}\left\{\dfrac{\mathrm{i}k_0}{S_i+S_j}\int_{S_i}\int_{S_j}M(k_\mathrm{f},||\mathbf{x}-\mathbf{x}'||)\mathrm{d}\mathbf{x}\mathrm{d}\mathbf{x}'\right\} \nonumber \\
+&amp;= \dfrac{S_i+S_j}{S}\bar{\sigma}_{ij}(k_\mathrm{f})-\dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f})-\dfrac{S_j}{S}\bar{\sigma}_{j}(k_\mathrm{f})\end{split}\]</div>
+<p>The first order approximation of the radiation efficiency therefore becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar{\sigma}^{(1)}(k_\mathrm{f}) &amp;= \sum\limits_i \dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f})+\sum\limits_i\sum\limits_{\substack{j\in \epsilon_i \\ j&gt;i}} \left[\dfrac{S_i+S_j}{S}\bar{\sigma}_{ij}(k_\mathrm{f})-\dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f})-\dfrac{S_j}{S}\bar{\sigma}_{j}(k_\mathrm{f})\right].\end{split}\]</div>
+<p>This expression can be further simplified by noting that in the latter summation, the term <span class="math notranslate nohighlight">\(S_i/S\bar{\sigma}_{i}(k_\mathrm{f})\)</span> appears <span class="math notranslate nohighlight">\(N_\epsilon^i\)</span> times, with <span class="math notranslate nohighlight">\(N_\epsilon^i\)</span> the number of adjacent elements <span class="math notranslate nohighlight">\(\epsilon_i\)</span> for subdomain <span class="math notranslate nohighlight">\(i\)</span>. Therefore, this expression becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar{\sigma}^{(1)}(k_\mathrm{f}) &amp;= \sum\limits_i \dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f})+\sum\limits_i\sum\limits_{\substack{j\in \epsilon_i \\ j&gt;i}} \dfrac{S_i+S_j}{S}\bar{\sigma}_{ij}(k_\mathrm{f})-\sum_iN_\epsilon^i\dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f}) \\
+&amp;= \sum\limits_i\sum\limits_{\substack{j\in \epsilon_i \\ j&gt;i}} \dfrac{S_i+S_j}{S}\bar{\sigma}_{ij}(k_\mathrm{f})-\sum_i(N_\epsilon^i-1)\dfrac{S_i}{S}\bar{\sigma}_{i}(k_\mathrm{f})\end{split}\]</div>
+<p>It therefore follows that the radiation efficiency can be obtained from the radiation efficiencies <span class="math notranslate nohighlight">\(\bar{\sigma}_{i}(k_\mathrm{f})\)</span> of the rectangular subdomains and the radiation efficiencies <span class="math notranslate nohighlight">\(\bar{\sigma}_{ij}(k_\mathrm{f})\)</span> of two adjacent subdomains. These can be obtained efficiently using the efficient integral of Yu and Hopkins.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<p>[1] Y. Yu and C. Hopkins. Reduced order integration for the radiation eciency of a rectangular plate. JASA Express Letters, 1(6):062801, 2021.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="userpage.html" class="btn btn-neutral float-left" title="User help page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="validation.html" class="btn btn-neutral float-right" title="Validation examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Cédric Van hoorickx.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
